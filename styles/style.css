@@ -41,16 +41,31 @@ header {
 }
 
 h1 {
+  background: linear-gradient(90deg, #ff0000, #ffff00, #0033ff, #ff00c4, #ff0000);
+  background-size: 400%;
   margin:2rem 0 1rem;
-  color: white;
   position: relative;
   right: -5rem;
   top: 2rem;
   font-weight:bold;
   font-size: 2.2em;
+  font-family: poppins; 
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 20s linear infinite;
 }
 
-button {
+@keyframes animate {
+  0%{
+    background-position: 0%
+  }
+  100%{
+    background-position: 400%;
+  }
+}
+
+.expandbutton {
   border:none;
   position: absolute;
   right:1rem;
@@ -63,12 +78,33 @@ button {
   padding:.25rem;
   transition:.25s;
 }
-button:focus {
+.expandbutton:focus {
   outline:none;
-  background:#202592;
+  background:red;
 }
-button:focus svg {
-  stroke: rgba(0,239,255,1);
+.expandbutton:focus svg {
+  stroke: black;
+}
+
+.buttonhobby {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buttongeboorteplaats {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buttonkwaliteiten {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 svg {
@@ -78,12 +114,12 @@ svg {
   left:calc(1.25rem - 12px);
   transition-delay: .25s;
 }
-button svg:nth-of-type(2) {
+.expandbutton svg:nth-of-type(2) {
   opacity:0;
   transition-delay: 0ms;
 }
 
-img {
+.firstimage {
   width:6em;
   border-radius:50%;
   border:5px solid rgb(255, 255, 255);
@@ -95,10 +131,32 @@ img {
 }
 
 
-img:hover {
+.firstimage:hover {
   -ms-transform: scale(1.5);
   -webkit-transform: scale(1.5);
   transform: scale(1.5);
+}
+
+.secondimage {
+  border-radius: 5%;
+  box-shadow: 10px 10px 20px black;
+  position: relative;
+  top: -10px;
+  left: .25rem;
+}
+
+.thirdimage {
+  border-radius: 5%;
+  box-shadow: 10px 10px 20px black;
+  position: relative;
+  top: -100px;
+}
+
+.fourthimage {
+  border-radius: 5%;
+  box-shadow: 10px 10px 20px black;
+  position: relative;
+  top: -10px;
 }
 
 .wrapper {
@@ -110,9 +168,8 @@ img:hover {
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
   grid-template-areas:
-    "html-dd css-dd js-dd"
-    "html-dt css-dt js-dt"
-    ;
+  "html-dt css-dt js-dt"
+  ;
   justify-items:center;
   align-items:start;
   padding: 0 1rem;
@@ -131,6 +188,9 @@ img:hover {
   margin-bottom: .25rem;
   padding-left: .3rem;
   transition:.25s .15s;
+  position: relative;
+  top: 30px;
+  left: 1px;
 }
 
 .two{
@@ -143,6 +203,10 @@ img:hover {
   margin-bottom: .25rem;
   padding-left: .3rem;
   transition:.25s .15s;
+  position: relative;
+  top: 240px;
+  left: 1px;
+ 
 }
 
 .three{
@@ -155,26 +219,21 @@ img:hover {
   margin-bottom: .25rem;
   padding-left: .3rem;
   transition:.25s .15s;
+  position: relative;
+  top: 30px;
+  left: 1px;
 }
 
 dt:nth-of-type(1){ grid-area: html-dt; }
-dt:nth-of-type(2){ grid-area: css-dt; transform: translateY(1rem);}
+dt:nth-of-type(2){ grid-area: css-dt; }
 dt:nth-of-type(3){ grid-area: js-dt; }
 
 dt:hover {
-  -ms-transform: scale(1.5);
-  -webkit-transform: scale(1.5);
-  transform: scale(1.5);
+  -ms-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
 }
 
-dd {
-  margin:0;
-  padding-left:.3rem;
-  transition:.25s .3s;
-}
-dd:nth-of-type(2){  
-  transform: translateY(1rem);
-}
 
 p { 
   margin:0
@@ -210,10 +269,3 @@ body.expand button svg:nth-of-type(2) {
   transition-delay:.25s;
 }
 
-body.expand dd {
-  font-size: 1.75em;
-}
-
-body.expand img {
-  width:10em;
-}
