@@ -52,6 +52,7 @@ h1 {
   font-family: poppins; 
   text-transform: uppercase;
   -webkit-background-clip: text;
+  background-clip: text; 
   -webkit-text-fill-color: transparent;
   animation: animate 20s linear infinite;
 }
@@ -86,26 +87,13 @@ h1 {
   stroke: black;
 }
 
-.buttonhobby {
+.buttonhobby, .buttongeboorteplaats, .buttonkwaliteiten {
   border: none;
   background: transparent;
   font-weight: bold;
   cursor: pointer;
 }
 
-.buttongeboorteplaats {
-  border: none;
-  background: transparent;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.buttonkwaliteiten {
-  border: none;
-  background: transparent;
-  font-weight: bold;
-  cursor: pointer;
-}
 
 svg {
   stroke: #000000;
@@ -121,9 +109,10 @@ svg {
 
 .firstimage {
   width:6em;
+  height: 6em;
+  object-fit: cover;
   border-radius:50%;
-  border:5px solid rgb(255, 255, 255);
-  box-shadow:0 0 2px 2px rgba(0,0,0,.2);
+  box-shadow: 10px 10px 20px red;
   position:relative;
   top:-4rem;
   left:-6rem;
